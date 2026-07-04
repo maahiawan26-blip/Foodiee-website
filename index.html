@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieExpress | Premium Food Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-eagle main-accent"></i> Foodie<span>Express</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#dishes">Dishes</a>
+            <a href="#offers">Offers</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <!-- <div class="nav-buttons">
+            <div class="cart-widget">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span id="cart-badge">0</span>
+            </div>
+            <button class="btn-login">Login / Sign Up</button>
+            <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
+        </div> -->
+
+        <div class="nav-buttons">
+            <div class="cart-widget">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span id="cart-badge">0</span>
+            </div>
+            
+            <button class="btn-login">Login / Sign Up</button>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate-text">Craving Something Delicious? <br>We Deliver <span>Fresh & Fast</span>.</h1>
+            <p>Order from your favorite local premium restaurants with just one click. Experience lightning-fast delivery at your doorstep.</p>
+            <div class="search-container">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" placeholder="Enter your delivery location or restaurant name...">
+                <button class="btn-search">Search</button>
+            </div>
+            <button class="btn-main">Order Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop" alt="Premium Delicious Food">
+        </div>
+    </section>
+
+    <section class="categories section-padding">
+        <h2 class="section-title">Popular Categories</h2>
+        <div class="category-grid">
+            <div class="category-card"><span>🍕</span><p>Pizza</p></div>
+            <div class="category-card"><span>🍔</span><p>Burger</p></div>
+            <div class="category-card"><span>🍛</span><p>Biryani</p></div>
+            <div class="category-card"><span>🍟</span><p>Fast Food</p></div>
+            <div class="category-card"><span>🍰</span><p>Desserts</p></div>
+            <div class="category-card"><span>🥤</span><p>Drinks</p></div>
+        </div>
+    </section>
+
+    <section id="restaurants" class="restaurants section-padding">
+        <h2 class="section-title">Featured Restaurants</h2>
+        <div class="restaurant-grid">
+            <div class="restaurant-card glass-card">
+                <div class="res-img-container">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=600&auto=format&fit=crop" alt="The Burger House">
+                </div>
+                <div class="res-info">
+                    <h3>The Burger House</h3>
+                    <p class="res-cuisine">Gourmet Burgers, Premium Fries & Fast Food</p>
+                    <div class="res-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.8 (500+)</span>
+                        <span class="time"><i class="fa-solid fa-clock"></i> 15-20 min</span>
+                    </div>
+                    <button class="btn-view-menu">View Menu</button>
+                </div>
+            </div>
+            <div class="restaurant-card glass-card">
+                <div class="res-img-container">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop" alt="Biryani Masters">
+                </div>
+                <div class="res-info">
+                    <h3>Biryani Masters</h3>
+                    <p class="res-cuisine">Traditional Aromatic Desi Cuisine</p>
+                    <div class="res-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.9 (1k+)</span>
+                        <span class="time"><i class="fa-solid fa-clock"></i> 20-30 min</span>
+                    </div>
+                    <button class="btn-view-menu">View Menu</button>
+                </div>
+            </div>
+            <div class="restaurant-card glass-card">
+                <div class="res-img-container">
+                    <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?q=80&w=600&auto=format&fit=crop" alt="Pasta Bella">
+                </div>
+                <div class="res-info">
+                    <h3>Pasta Bella</h3>
+                    <p class="res-cuisine">Authentic Italian, Thin Crust Pizza & Pastas</p>
+                    <div class="res-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.6 (320+)</span>
+                        <span class="time"><i class="fa-solid fa-clock"></i> 25-35 min</span>
+                    </div>
+                    <button class="btn-view-menu">View Menu</button>
+                </div>
+            </div>
+            <div class="restaurant-card glass-card">
+                <div class="res-img-container">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop" alt="Healthy Bites">
+                </div>
+                <div class="res-info">
+                    <h3>Healthy Bites</h3>
+                    <p class="res-cuisine">Organic Salads, Fresh Juices & Diet Bowls</p>
+                    <div class="res-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.7 (150+)</span>
+                        <span class="time"><i class="fa-solid fa-clock"></i> 15-25 min</span>
+                    </div>
+                    <button class="btn-view-menu">View Menu</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dishes" class="dishes section-padding">
+        <h2 class="section-title">Popular Dishes</h2>
+        <div class="dish-grid">
+            <div class="dish-card glass-card">
+                <div class="dish-img-container">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500&auto=format&fit=crop" alt="Pizza">
+                </div>
+                <h3>Cheesy Pepperoni Pizza</h3>
+                <p class="dish-desc">Extra mozzarella cheese with premium Italian beef pepperoni slices loaded over freshly baked crust.</p>
+                <div class="dish-footer">
+                    <p class="price">Rs. 1,200</p>
+                    <button class="btn-add-cart">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+            <div class="dish-card glass-card">
+                <div class="dish-img-container">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500&auto=format&fit=crop" alt="Burger">
+                </div>
+                <h3>Crunchy Zinger Burger</h3>
+                <p class="dish-desc">Crispy golden fried chicken thigh piece topped with fresh iceberg lettuce and our signature secret mayo sauce.</p>
+                <div class="dish-footer">
+                    <p class="price">Rs. 450</p>
+                    <button class="btn-add-cart">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+            <div class="dish-card glass-card">
+                <div class="dish-img-container">
+                    <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=500&auto=format&fit=crop" alt="Biryani">
+                </div>
+                <h3>Special Chicken Biryani</h3>
+                <p class="dish-desc">Premium long-grain Basmati rice infused with aromatic spices, layered with tender spicy chicken.</p>
+                <div class="dish-footer">
+                    <p class="price">Rs. 380</p>
+                    <button class="btn-add-cart">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+            <div class="dish-card glass-card">
+                <div class="dish-img-container">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500&auto=format&fit=crop" alt="Alfredo Pasta">
+                </div>
+                <h3>Creamy Alfredo Pasta</h3>
+                <p class="dish-desc">Rich fettuccine pasta tossed gently in high-quality butter, heavy cream, and authentic parmesan cheese.</p>
+                <div class="dish-footer">
+                    <p class="price">Rs. 850</p>
+                    <button class="btn-add-cart">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+            <div class="dish-card glass-card">
+                <div class="dish-img-container">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=500&auto=format&fit=crop" alt="Strawberry Cake">
+                </div>
+                <h3>Strawberry Cheesecake</h3>
+                <p class="dish-desc">Classic New York style rich cheesecake topped with fresh sweet strawberry glaze syrup.</p>
+                <div class="dish-footer">
+                    <p class="price">Rs. 550</p>
+                    <button class="btn-add-cart">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+            <div class="dish-card glass-card">
+                <div class="dish-img-container">
+                    <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=500&auto=format&fit=crop" alt="Mint Margarita">
+                </div>
+                <h3>Classic Mint Margarita</h3>
+                <p class="dish-desc">Refreshing cool beverage crushed with fresh mint leaves, lemon juice, sugar cubes, and carbonated water.</p>
+                <div class="dish-footer">
+                    <p class="price">Rs. 250</p>
+                    <button class="btn-add-cart">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="offers section-padding">
+        <div class="offer-banner glass-card neon-border">
+            <div class="offer-text">
+                <h2>Flat 20% OFF & Free Delivery!</h2>
+                <p>Apply coupon code <span class="promo-code">FIRST20</span> on checkout for your first massive order.</p>
+            </div>
+            <button class="btn-main">Claim Offer</button>
+        </div>
+    </section>
+
+    <section class="how-it-works section-padding">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Choose Food</h3>
+                <p>Select your favorite premium meals from thousands of curated top restaurants.</p>
+            </div>
+            <div class="step-card">
+                <i class="fa-solid fa-wallet"></i>
+                <h3>Place Order</h3>
+                <p>Pay securely via integrated card modules or choose instant Cash on Delivery.</p>
+            </div>
+            <div class="step-card">
+                <i class="fa-solid fa-motorcycle"></i>
+                <h3>Fast Delivery</h3>
+                <p>Our dedicated delivery partner drops it off piping hot right to your designated area.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews section-padding">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="reviews-slider">
+            <div class="review-card glass-card">
+                <div class="user-info">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="User">
+                    <div>
+                        <h4>Ayesha Khan</h4>
+                        <div class="user-rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                    </div>
+                </div>
+                <p class="review-text">"Khaana hamesha garam aur on time milta hai. Inki responsive glassmorphic interface aur quick update systems ki wajah se ordering experience bohat smoothen ho gaya hai!"</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mobile-app section-padding">
+        <div class="app-container glass-card">
+            <div class="app-text">
+                <h2>Get the FoodieExpress App</h2>
+                <p>Download our application for exclusive flash sales, live rider tracking, and ultra-fast ordering paths.</p>
+                <div class="app-buttons">
+                    <button class="btn-app"><i class="fa-brands fa-apple"></i> App Store</button>
+                    <button class="btn-app"><i class="fa-brands fa-google-play"></i> Play Store</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter section-padding">
+        <div class="newsletter-box">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get weekly structural updates on modern premium discounts and new premium kitchens nearby.</p>
+            <div class="subscribe-form">
+                <input type="email" placeholder="Enter your valid email address...">
+                <button class="btn-subscribe">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>FoodieExpress</h3>
+                <p>Your favorite dynamic dishes delivered fresh, fast, and straight to your cozy couch space.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact Support</a>
+                <a href="#">Privacy Policy Terms</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 FoodieExpress. All rights reserved.</p>
+    </footer>
+
+    <!-- item page hai  -->
+
+    <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h3><i class="fa-solid fa-basket-shopping main-accent"></i> Your Basket</h3>
+        <div class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+
+    <div class="cart-body" id="cart-items-container">
+        <div class="empty-cart-msg">Your basket is empty. Add some delicious food!</div>
+    </div>
+
+    <div class="cart-footer">
+        <div class="bill-row">
+            <span>Subtotal</span>
+            <span id="bill-subtotal">Rs. 0</span>
+        </div>
+        <div class="bill-row">
+            <span>Delivery Fee</span>
+            <span id="bill-delivery">Rs. 50</span>
+        </div>
+        <hr class="bill-divider">
+        <div class="bill-row total-bill">
+            <span>Total Bill</span>
+            <span id="total-amount">Rs. 0</span>
+        </div>
+        <button class="btn-checkout">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</div>
+
+<!-- ============whatsapp icon ============= -->
+ <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<div class="theme-toggle" id="theme-toggle">
+    <i class="fa-solid fa-moon"></i>
+</div>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

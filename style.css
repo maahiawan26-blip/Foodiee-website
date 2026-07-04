@@ -1,0 +1,963 @@
+/* RESET & CORE GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #0d1117;
+    --text-light: #ffffff;
+    --text-muted: #a3b3bc;
+    --accent-color: #72db34; /* Neon green accent branding color */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+span, .main-accent {
+    color: var(--accent-color);
+}
+
+.section-padding {
+    padding: 100px 8%; /* Increased padding for an elite layout breathing space */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem; /* Prominent heading size */
+    margin-bottom: 55px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* HIGH-LEVEL GLASSMORPHISM CARD STYLING */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px; /* Bigger curves */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s, box-shadow 0.4s;
+}
+
+/* NAVIGATION HEADER BAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 22px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* REAL-TIME CART ICON WIDGET */
+.cart-widget {
+    position: relative;
+    font-size: 1.6rem;
+    color: var(--text-light);
+    cursor: pointer;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--accent-color);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--text-light);
+    padding: 9px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 18px var(--accent-color);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* HERO MAIN DISPLAY SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 140px 8% 80px;
+}
+
+.hero-content {
+    max-width: 52%;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    padding: 8px 8px 8px 22px;
+    border-radius: 50px;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+.search-container i {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 75%;
+    font-size: 1rem;
+}
+
+.btn-search {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-main {
+    background: var(--accent-color);
+    color: #000;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-image img {
+    width: 480px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 10px solid var(--glass-border);
+    box-shadow: 0 0 40px rgba(114, 219, 52, 0.15);
+}
+
+/* CATEGORIES ROW */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+}
+
+.category-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    text-align: center;
+    padding: 30px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-card span {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    font-weight: 500;
+}
+
+.category-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-6px);
+    background: rgba(114, 219, 52, 0.04);
+}
+
+/* ENHANCED PROMINENT CARDS GRID */
+.restaurant-grid, .dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); /* Bigger size metrics */
+    gap: 40px;
+}
+
+.restaurant-card, .dish-card {
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.res-img-container img, .dish-img-container img {
+    width: 100%;
+    height: 240px; /* Significantly increased image scale height */
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.res-info h3, .dish-card h3 {
+    font-size: 1.4rem;
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+.res-cuisine {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 4px 0 10px;
+}
+
+.dish-desc {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: 8px 0 20px;
+    line-height: 1.5;
+}
+
+.res-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-muted);
+    margin: 15px 0;
+    font-size: 0.95rem;
+}
+
+.rating i { color: #f0ed3d; }
+
+.btn-view-menu, .btn-add-cart {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* HIGH END HOVER TRANSLATION PACKAGES */
+.restaurant-card:hover, .dish-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 35px rgba(114, 219, 52, 0.12);
+}
+
+.dish-card:hover .btn-add-cart, .restaurant-card:hover .btn-view-menu {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(114, 219, 52, 0.3);
+}
+
+.dish-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.dish-card .price {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* OFFERS DASHED STRUCTURAL BANNER */
+.neon-border {
+    border: 1px dashed var(--accent-color) !important;
+    box-shadow: inset 0 0 20px rgba(114, 219, 52, 0.08);
+}
+.offer-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+.offer-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.promo-code {
+    background: rgba(114, 219, 52, 0.15);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    border: 1px solid rgba(114, 219, 52, 0.3);
+}
+
+/* STRATEGIC PROCEDURES GRAPHIC */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+.step-card {
+    padding: 20px;
+}
+.step-card i {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 22px;
+}
+.step-card h3 {
+    margin-bottom: 10px;
+}
+
+/* REVIEWS WRAPPER */
+.review-card {
+    padding: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+.user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* APP INTEGRATION & FORMS */
+.app-container {
+    padding: 60px;
+    text-align: center;
+}
+.app-text h2 { font-size: 2.2rem; margin-bottom: 10px;}
+.app-buttons { margin-top: 25px; }
+.btn-app {
+    background: #000;
+    color: #fff;
+    border: 1px solid var(--glass-border);
+    padding: 14px 30px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.btn-app:hover { border-color: var(--accent-color); }
+
+.newsletter-box { text-align: center; }
+.subscribe-form {
+    display: flex;
+    max-width: 550px;
+    margin: 30px auto 0;
+}
+.subscribe-form input {
+    flex: 1;
+    padding: 18px 25px;
+    border-radius: 30px 0 0 30px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.04);
+    color: white;
+    outline: none;
+    font-size: 1rem;
+}
+.btn-subscribe {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 0 35px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* FOOTER ENVIRONMENT */
+footer {
+    border-top: 1px solid var(--glass-border);
+    padding: 60px 8% 30px;
+    background: #080b0f;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.footer-about { max-width: 400px; }
+.footer-links h4 { margin-bottom: 15px; font-size: 1.1rem; }
+.footer-links a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-top: 12px;
+    transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent-color); }
+.social-icons i {
+    font-size: 1.7rem;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.social-icons i:hover { color: var(--accent-color); }
+.copyright {
+    text-align: center;
+    margin-top: 60px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding-top: 20px;
+}
+
+/* RESPONSIVE LAYOUT MATRIX */
+@media (max-width: 1024px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 150px; }
+    .hero-content { max-width: 100%; margin-bottom: 60px; }
+    .search-container { margin: 0 auto 35px; }
+    .hero-image img { width: 380px; height: 380px; }
+    .offer-banner { flex-direction: column; text-align: center; gap: 25px; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; color: white; }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transition: 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+    }
+    .nav-links.active { left: 0; }
+    .nav-links a { margin: 22px 0; font-size: 1.25rem; }
+    .section-title { font-size: 2.2rem; }
+}
+
+/* nebar  ke liye */
+
+/* Nav buttons ko ek line me lane ke liye */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Buttons ke darmiyan spacing */
+}
+
+/* Normal desktop screen par mobile burger menu chupa rahe ga */
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Jab screen choti ho (Mobile View) toh icon samne aa jaye */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .btn-login {
+        display: none; /* Mobile par screen space bachane ke liye login hide kar sakte hain */
+    }
+}
+
+
+/* item page ki hai css */
+
+/* CART SIDEBAR MAIN WINDOW */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px; /* Shuru me screen se bahar chupa rahega */
+    width: 420px;
+    height: 100vh;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+.cart-sidebar.open {
+    right: 0; /* Click par samne aa jayega */
+}
+
+/* CART OVERLAY */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1999;
+    display: none;
+    backdrop-filter: blur(4px);
+}
+
+.cart-overlay.show {
+    display: block;
+}
+
+/* INNER PANELS CONFIGURATION */
+.cart-header {
+    padding: 25px;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-header h3 { font-size: 1.3rem; font-weight: 600; }
+.close-cart { font-size: 1.5rem; cursor: pointer; color: var(--text-muted); transition: color 0.2s; }
+.close-cart:hover { color: #ff4a4a; }
+
+.cart-body {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+}
+.empty-cart-msg {
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.95rem;
+}
+
+/* DYNAMIC ADDED ITEM CARD */
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.cart-item-card img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+.item-details { flex: 1; }
+.item-details h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
+.item-details .item-price { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
+.item-qty-controls { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+.btn-qty { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; width: 24px; height: 24px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.btn-qty:hover { background: var(--accent-color); color: black; }
+
+/* AUTOMATED RECEIPT FOOTER */
+.cart-footer {
+    padding: 25px;
+    border-top: 1px solid var(--glass-border);
+    background: rgba(9, 13, 19, 0.6);
+}
+.bill-row { display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--text-muted); font-size: 0.95rem; }
+.bill-divider { border: 0; border-top: 1px solid var(--glass-border); margin: 15px 0; }
+.total-bill { color: white; font-weight: 700; font-size: 1.2rem; }
+.total-bill span:last-child { color: var(--accent-color); }
+
+.btn-checkout {
+    width: 100%;
+    background: var(--accent-color);
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(114, 219, 52, 0.2);
+    transition: transform 0.2s;
+}
+.btn-checkout:hover { transform: scale(1.02); }
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .cart-sidebar { width: 100%; right: -100%; }
+}
+
+/* ===========whatsapp icon============ */
+
+.whatsapp-float{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+
+    animation: bounce 2s infinite, pulse 2s infinite;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.15);
+}
+
+@keyframes bounce{
+    0%,20%,50%,80%,100%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-12px);
+    }
+    60%{
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(37,211,102,0.7);
+    }
+    70%{
+        box-shadow: 0 0 0 18px rgba(37,211,102,0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+
+/* .whatsapp-float{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    text-decoration: none;
+    z-index: 9999;
+} */
+
+.theme-toggle{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: #72db34;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 9999;
+    box-shadow: 0 0 15px rgba(114,219,52,0.5);
+    transition: 0.3s;
+}
+
+.theme-toggle:hover{
+    transform: scale(1.1);
+}
+
+body.light-mode{
+    background:#fff;
+    color:#111;
+}
+
+body.light-mode .navbar{
+    background:#fff;
+}
+
+body.light-mode .glass-card{
+    background:#f5f5f5;
+}
+
+body.light-mode .nav-links a{
+    color:#111;
+}
+
+
+/* ===============heading wagra ke liye hai  */
+
+/* Light Mode Text Fix */
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6,
+body.light-mode p,
+body.light-mode span,
+body.light-mode .res-info,
+body.light-mode .dish-card,
+body.light-mode .step-card,
+body.light-mode .review-card,
+body.light-mode .offer-text {
+    color: #111 !important;
+}
+
+/* Green accent ko same rehne do */
+body.light-mode .main-accent,
+body.light-mode .hero-content h1 span,
+body.light-mode .promo-code {
+    color: var(--accent-color) !important;
+}
+
+/* Footer text */
+body.light-mode footer,
+body.light-mode footer p,
+body.light-mode footer a,
+body.light-mode footer h3,
+body.light-mode footer h4 {
+    color: #111 !important;
+}
+
+/* Buttons */
+body.light-mode .btn-view-menu,
+body.light-mode .btn-add-cart {
+    color: #111;
+}
+
+/* =================item hai ye========== */
+
+/* Light Mode Cart Fix */
+
+body.light-mode .cart-sidebar{
+    background: #ffffff;
+    color: #111;
+}
+
+body.light-mode .cart-item-card{
+    background: #f5f5f5;
+}
+
+body.light-mode .cart-item-card h4,
+body.light-mode .item-price,
+body.light-mode .bill-row,
+body.light-mode .bill-row span,
+body.light-mode .bill-total,
+body.light-mode .bill-total span{
+    color: #111 !important;
+}
+
+body.light-mode .empty-cart-msg{
+    color: #111;
+}
+
+body.light-mode .btn-qty{
+    color: #111;
+    border: 1px solid #ccc;
+}
+
+/* LIGHT MODE FIX */
+
+body.light-mode .search-container{
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+body.light-mode .search-container input{
+    color: #111 !important;
+}
+
+body.light-mode .search-container input::placeholder{
+    color: #666 !important;
+}
+
+body.light-mode .search-container i{
+    color: #72db34 !important;
+}
+
+/* Toggle Button */
+body.light-mode .theme-toggle{
+    background: #72db34;
+    color: #000 !important;
+}
+
+/* All Buttons */
+body.light-mode button{
+    color: #000 !important;
+}
+
+/* Links */
+body.light-mode a{
+    color: inherit;
+}
+
+/* Navbar */
+body.light-mode .navbar{
+    background: #fff;
+}
+
+/* Hero Text */
+body.light-mode .hero-content h1,
+body.light-mode .hero-content p{
+    color: #111 !important;
+}
+
+/* Cart */
+body.light-mode .cart-widget,
+body.light-mode #cart-badge{
+    color: #000;
+}
+
+
+/* moble ke liye hai ye */
+
+body.light-mode .nav-links a{
+    color: #111 !important;
+}
+
+body.light-mode .nav-links{
+    background: #ffffff !important;
+}
+
+.nav-links a{
+    color: #ffffff;
+}
+
+body.light-mode .nav-links a{
+    color: #111 !important;
+}
+
+/* =============menu icon ke liye hai ye */
+
+.mobile-menu i{
+    color: #111 !important;
+}
+
+.mobile-menu{
+    display: none;
+    font-size: 28px;
+    color: #111;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+
+    .mobile-menu{
+        display: block;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .nav-links.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        gap: 20px;
+    }
+}
